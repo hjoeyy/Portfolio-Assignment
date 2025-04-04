@@ -1,4 +1,4 @@
-section-header {
+header {
     padding-top: 32px;
     padding-bottom: 8px;
 
@@ -12,6 +12,16 @@ section-header {
     margin: 0 auto;
 }
 
+@media (max-width: 1024px) {
+    header {
+        padding: 0;
+    }
+    .navbar {
+        padding: 16px;
+        padding-bottom: 0;
+    }
+}
+
 .logo-wrapper {
     display: flex;
     align-items: center;
@@ -21,7 +31,7 @@ section-header {
 .logo-img {
    width: 16px;
    height: 16px;
-   margin: 2.5px;
+   margin: 8px;
 }
 .logo {
     margin: 0;
@@ -32,12 +42,23 @@ section-header {
     margin: 0;
     padding: 0;
     display: flex;
-
+    gap: 32px;
 }
 
-.nav-item {
-    margin: 0 16px;
+.burger-icon {
+    display: none;
 }
+
+@media (max-width: 480px) {
+    .nav-list {
+        display: none;
+    }
+
+    .burger-icon {
+        display: block;
+    }
+}
+
 
 .nav-link {
     color: var(--gray);
@@ -68,6 +89,17 @@ section-header {
     align-items: center;
     gap: 18px;
     margin-top: 62px;
+}
+
+@media (max-width: 1024px) {
+    .main-container {
+        padding: 16px;
+    }
+    .hero {
+        flex-direction: column;
+        margin-top: 34px;
+    }
+
 }
 
 .hero-content {
@@ -104,6 +136,15 @@ section-header {
     gap: 10px;
     border: 1px solid var(--gray);
     width: 402px;
+}
+
+@media (max-width: 480px) {
+    .hero-image {
+        padding: 0 22px;
+    }
+    .hero-image img, .portfolio-note-wrapper {
+        width: 100%;
+    }
 }
 .portfolio-note {
     font-size: 16px;
@@ -162,6 +203,15 @@ section-header {
     border-top: none;
 }
 
+@media (max-width: 480px) {
+    .quote blockquote {
+        font-size: 18px;
+        padding: 24px;
+    }
+    .quote figcaption {
+        font-size: 18px;
+    }
+}
 /* Social links */
 .social-links {
     position: fixed;
@@ -172,6 +222,12 @@ section-header {
     left: 17px;
     top: 0;
     gap: 8px;
+}
+
+@media (max-width: 1024px) {
+    .social-links {
+        display: none;
+    }
 }
 .social-links-line {
     width: 1px;
@@ -223,6 +279,12 @@ section-header {
     transform: translate(100%, -50%);
 }
 
+@media (max-width: 1024px) {
+    .section-header h2::after {
+        display: none;
+    }
+}
+
 .section-header a {
     color: var(--white);
     text-decoration: underline;
@@ -235,8 +297,20 @@ section-header {
     align-items: start;
 }
 
+@media (max-width: 480px) {
+    .project-cards {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
 .project-card, .project-card img {
     border: 1px solid var(--gray);
+}
+
+.project-card img {
+    width: 100%;
+    object-fit: cover;
+    box-sizing: border-box;
 }
 
 .project-card ul {
@@ -281,6 +355,25 @@ section-header {
 .skill-cards {
     display: flex;
     gap: 16px;
+}
+
+@media (max-width: 480px) {
+    .skills {
+        gap: 36px;
+    }
+    .skills-content, .skill-cards {
+        flex-direction: column;
+    }
+
+    .skills-content img {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .skills-content img {
+        display: none;
+    }
 }
 
 .skill-group {
@@ -328,6 +421,21 @@ section-header {
     animation: upAndDownAnimation 4s ease-in-out infinite;
 }
 
+@media (max-width: 480px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-content img {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .about-content img {
+        max-width: 250px;
+    }
+}
 @keyframes upAndDownAnimation {
     0%, 100% {
         transform: translateY(0);
@@ -343,6 +451,12 @@ section-header {
     display: flex;
     justify-content: space-between;
     margin-top: 45px;
+}
+
+@media (max-width: 480px) {
+    .contacts-content {
+        flex-direction: column;
+    }
 }
 
 .contacts-content p {
@@ -385,6 +499,29 @@ footer {
 .footer-content {
     display: flex;
     justify-content: space-between;
+}
+
+@media (max-width: 480px) {
+
+    footer {
+        margin-top: 45px;
+        padding: 16px 0;
+    }
+    .footer-content {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .footer-container {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 16px;
+    }
 }
 
 .footer-logo {
@@ -488,4 +625,143 @@ footer {
 .small-projects-header h2::before {
     content: '#';
     color: var(--primary);
+}
+
+/* About me section */
+
+.about-me {
+    display: flex;
+    flex-direction: column;
+    gap: 53px;
+}
+
+.about-me-header h2 {
+    margin: 0;
+    margin-top: 53px;
+}
+
+.about-me-header h2::before {
+    content: '/';
+    color: var(--primary);
+}
+
+.about-me-header p {
+    color: var(--white);
+}
+
+.about-me-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-me-content-text {
+    max-width: 515px;
+}
+
+.about-me-skills-header h2 {
+    margin: 0;
+    margin-bottom: 48px;
+}
+
+.about-me-skills-header h2::before {
+    content: '#';
+    color: var(--primary)
+}
+
+.my-fun-facts-header h2 {
+    margin: 0;
+    margin-bottom: 26px;
+}
+
+.my-fun-facts-header h2::before {
+    content: '#';
+    color: var(--primary);
+}
+
+/* Fun Facts */
+
+.my-fun-facts-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 156px;
+}
+
+.fun-fact-cards {
+    display: flex;
+    gap: 16px;
+}
+
+.fun-fact-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.fun-fact-category {
+    border: 1px solid var(--gray);
+    width: fit-content;
+}
+
+.fun-fact-category p {
+    padding: 8px;
+    display: flex;
+    gap: 8px;
+    color: var(--gray);
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+/* Contact Section */
+
+.main-container-three {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 53px;
+}
+
+.contact-header h2 {
+    margin: 0;
+    margin-top: 53px;
+}
+
+.contact-header h2::before {
+    content: '/';
+    color: var(--primary);
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contacts-text {
+    max-width: 505px;
+}
+
+/* Media Section */
+
+.all-media-header h2 {
+    margin: 0;
+    margin-top: 25px;
+}
+
+.all-media-header h2::before {
+    content: '#';
+    color: var(--primary);
+}
+
+.media-content {
+    display: flex;
+    margin-top: 21px;
+    gap: 22px;
+}
+
+.media {
+    color: var(--gray);
+    display: flex;
+    gap: 9px; 
+    align-items: center;
+    margin-top: 8px;
 }
