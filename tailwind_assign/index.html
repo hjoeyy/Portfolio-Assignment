@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class="bg-slate-900">
+    <h1 class="text-4xl font-bold text-center my-5 text-slate-300">Checkout</h1>
+    <form class="bg-white max-w-md mx-auto p-6 rounded-lg shadow space-y-3">
+        <fieldset>
+            <legend class="text-lg font-semibold mb-2">Billing Details</legend>
+            
+            <div class="mb-4">
+                <label for="fullName" class="text-sm font-medium text-gray-700 block">Full Name</label>
+                <input class="border rounded-md w-full mt-1 p-2" type="text" id="fullName" name="fullName">
+            </div>
+            <div class="mb-4">
+                <label for="email" class="text-sm font-medium text-gray-700 block">Email Address</label>
+                <input class="border rounded-md w-full mt-1 p-2" type="email" id="email" name="email">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend class="text-lg font-semibold mb-2">Payment Method</legend>
+            <div class="space-y-4">
+                <div class="flex items-center">
+                    <input class="h-4 w-4" type="radio" name="payment_method" id="payment_method" checked>
+                    <label for="payment_method" class="ml-3 text-sm font-medium text-gray-700">Credit Card</label>
+                </div>
+                <div class="flex items-center">
+                    <input class="h-4 w-4" type="radio" name="payment_method" id="payment_method">
+                    <label for="payment_method" class="ml-3 text-sm font-medium text-gray-700">Paypal</label>
+                </div>
+                <div class="flex items-center">
+                    <input class="h-4 w-4" type="radio" name="payment_method" id="payment_method">
+                    <label for="payment_method" class="ml-3 text-sm font-medium text-gray-700">Stripe</label>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend class="text-lg font-semibold mb-2">Card Details</legend>
+            
+            <div class="mb-4">
+                <label for="card_number" class="text-sm font-medium text-gray-700 block">Card Number</label>
+                <input class="border rounded-md w-full mt-1 p-2" type="text" id="card_number" name="card_number">
+            </div>
+            <div class="mb-4">
+                <label for="card_expiry" class="text-sm font-medium text-gray-700 block">Expiration Date</label>
+                <input class="border rounded-md w-full mt-1 p-2" type="text" id="card_expiry" name="card_expiry">
+            </div>
+            <div class="mb-4">
+                <label for="card_cvc" class="text-sm font-medium text-gray-700 block">CVC</label>
+                <input class="border rounded-md w-full mt-1 p-2" type="text" id="card_cvc" name="card_cvc">
+            </div>
+        </fieldset>
+
+        <button type="submit" class="w-full bg-blue-500 text-white font-bold p-2 mt-4 rounded">Place Order</button>
+    </form>
+</body>
+</html>
